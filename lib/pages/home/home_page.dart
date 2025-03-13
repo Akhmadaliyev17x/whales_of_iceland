@@ -5,6 +5,7 @@ import 'package:whales_of_iceland/companents/bottom_appbar.dart';
 import 'package:whales_of_iceland/companents/first_lvl_txt.dart';
 import 'package:whales_of_iceland/companents/guide_card.dart';
 import 'package:whales_of_iceland/data/data.dart';
+import 'package:whales_of_iceland/pages/about/about_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -19,8 +20,17 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: appBarCustom(),
-        bottomNavigationBar: BottomAppbarCustom(),
+        appBar: appBarCustom(icon: CupertinoIcons.share),
+        bottomNavigationBar: BottomAppbarCustom(
+          onPressedAbout: () {
+            Navigator.push(
+              context,
+              CupertinoPageRoute(
+                builder: (_) => AboutSafetyPage(),
+              ),
+            );
+          },
+        ),
         body: Padding(
           padding: EdgeInsets.symmetric(
             horizontal: 20,
@@ -38,9 +48,13 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       spacing: 16,
                       children: [
-                        for(int i = 0 ; i < Data.whiles.length ; i ++ )
-                          GuideCard(fish: Data.whiles[i],),
-                        SizedBox(height: 16,)
+                        for (int i = 0; i < Data.whiles.length; i++)
+                          GuideCard(
+                            fish: Data.whiles[i],
+                          ),
+                        SizedBox(
+                          height: 16,
+                        )
                       ],
                     ),
                   ),

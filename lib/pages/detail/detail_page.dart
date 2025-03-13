@@ -151,12 +151,15 @@ class DetailPage extends StatelessWidget {
                               CupertinoIcons.backward_end_alt_fill,
                               color: ColorService.blueIconBack,
                             ),
-                            Icon(Icons.play_circle , color: ColorService.blueText, size: 60,),
+                            Icon(
+                              Icons.play_circle,
+                              color: ColorService.blueText,
+                              size: 60,
+                            ),
                             Icon(
                               CupertinoIcons.forward_end_alt_fill,
                               color: ColorService.blueIconBack,
                             ),
-                            
                           ],
                         )
                       ],
